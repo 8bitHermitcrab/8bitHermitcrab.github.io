@@ -79,6 +79,9 @@ section { padding-top: 64px; }
 .meta dt { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); letter-spacing: 0.04em; }
 .meta dd { margin: 0; font-variant-numeric: tabular-nums; }
 .meta dl { margin: 0; display: grid; gap: 12px; }
+.meta .roles { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; }
+.meta .roles li { position: relative; padding-left: 12px; }
+.meta .roles li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 5px; height: 1.5px; background: var(--accent); }
 .stack { display: flex; flex-wrap: wrap; gap: 5px; }
 .stack span { font-family: var(--font-mono); font-size: 11.5px; padding: 2px 7px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
 
@@ -165,6 +168,7 @@ figcaption { font-size: 12.5px; color: var(--muted); }
 @media (max-width: 720px) {
   .project { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .meta dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .meta .role-item { grid-column: 1 / -1; }
   .phase { grid-template-columns: 1fr; }
   .toc a { grid-template-columns: 1fr auto; }
   .toc .toc-kind { grid-column: 1 / -1; }
@@ -300,6 +304,7 @@ html { scroll-behavior: smooth; }
         <span class="status">status: 2026 배포 완료</span>
         <dl>
           <div><dt>1단계 (팀)</dt><dd>2022.04.10 – 04.28<br>멀티캠퍼스 K-Digital Training<br>4인 (팀)</dd></div>
+          <div class="role-item"><dt>내 역할 (팀)</dt><dd><ul class="roles"><li>한국어 데이터 전처리</li><li>한국어 모델 파인튜닝</li><li>PPT 제작, 발표</li></ul></dd></div>
           <div><dt>2단계 (개인)</dt><dd>2026.10.04 – 10.05<br>개인</dd></div>
           <div><dt>서비스</dt><dd><a href="http://136.115.122.111:8501/" target="_blank" rel="noopener">136.115.122.111:8501</a></dd></div>
           <div><dt>코드</dt><dd><a href="https://github.com/8bitHermitcrab/news_topic" target="_blank" rel="noopener">github.com/8bitHermitcrab/news_topic</a></dd></div>
@@ -365,7 +370,6 @@ html { scroll-behavior: smooth; }
           <ul>
             <li>한국어: 학습 데이터 45,653개, 테스트 데이터 9,130개, 데이콘 뉴스 토픽 분류 대회의 YNAT(연합뉴스 헤드라인) 데이터, 다음 뉴스 크롤링 데이터</li>
             <li>영어: 학습 데이터 27,200개, 테스트 데이터 6,800개, Kaggle Topic Labeled News Dataset(HEALTH 제외, 토픽별 5,000건), Kaggle News Category Dataset(정치 토픽 보강)</li>
-            <li>내 역할: 한국어 데이터 전처리, 한국어 모델 파인튜닝, PPT 제작, 발표</li>
           </ul></div>
 
         <div class="block"><h4>모델 선택 <span class="tag">DECISION</span></h4>
@@ -538,6 +542,7 @@ html { scroll-behavior: smooth; }
         <dl>
           <div><dt>기간</dt><dd>2022.04.20 – 06.10</dd></div>
           <div><dt>과정</dt><dd>멀티캠퍼스 K-Digital Training<br>4인 (팀)</dd></div>
+          <div class="role-item"><dt>내 역할</dt><dd><ul class="roles"><li>데이터 시각화</li><li>XGBoost·LightGBM 모델링</li><li>Optuna 하이퍼파라미터 튜닝</li><li>Streamlit 웹 구현, EC2 배포</li><li>내부 발표</li></ul></dd></div>
           <div><dt>시연 영상</dt><dd><a href="https://youtu.be/J_Sj7V2fC0E" target="_blank" rel="noopener">youtu.be/J_Sj7V2fC0E</a></dd></div>
           <div><dt>코드</dt><dd><a href="https://github.com/8bitHermitcrab/finalsite" target="_blank" rel="noopener">github.com/8bitHermitcrab/finalsite</a></dd></div>
         </dl>
@@ -547,7 +552,6 @@ html { scroll-behavior: smooth; }
         <header>
           <h2>마이데이터 신용도 예측 시스템</h2>
           <p class="one-line">기존 신용카드 사용자의 개인정보로 신규 고객의 신용 등급(0~2)을 예측하는 웹 서비스로, 고객은 자신의 정보를 입력해 신용도를 조회하고 기업은 관리자 페이지에서 고객 데이터를 시각화해 분석함.</p>
-          <p class="role"><b>내 역할</b> · 데이터 시각화, XGBoost·LightGBM 모델링과 Optuna 튜닝, Streamlit 웹 구현과 EC2 배포, 내부 발표</p>
         </header>
 
         <figure>
@@ -667,6 +671,7 @@ html { scroll-behavior: smooth; }
         <li>멀티캠퍼스 비정형 데이터 활용 분석 프로젝트 최우수상<span class="d">2022.06</span></li>
         <li>멀티캠퍼스 훈련생 우수상<span class="d">2022.06</span></li>
         <li>멀티캠퍼스 프로젝트 우수상<span class="d">2022.04</span></li>
+        <li>서일대학교 공로상<span class="d">2020.02</span></li>
       </ul></div>
       <div><h3>어학</h3><ul>
         <li>G-TELP 73점<span class="d">2025.05</span></li>
